@@ -1,0 +1,27 @@
+.container {
+    padding: 20px;
+  }
+  .book-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  .book-table th, .book-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .book-table th {
+    background-color: #f4f4f4;
+  }
+  button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
