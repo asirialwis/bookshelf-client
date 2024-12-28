@@ -46,6 +46,23 @@ button:hover {
   z-index: 1000;
 }
 
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Adds space between the heading and the image */
+}
+
+.modal-header h3 {
+  margin: 0; /* Ensures the heading is aligned properly */
+}
+
+.modal-header .modal-icon {
+  height: 60px; /* Adjust the size as needed */
+  margin-right: 20px; /* Adds space between the heading and the image */
+}
+
+
+
 /* Modal overlay (background dim) */
 .modal-overlay {
   position: absolute;

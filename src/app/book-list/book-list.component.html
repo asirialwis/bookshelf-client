@@ -60,7 +60,10 @@
     <!-- Add Book Modal -->
   <div *ngIf="showAddBookModal" class="modal">
     <div class="modal-content">
-      <h3>Add New Book</h3>
+      <div class="modal-header">
+        <h3>Add New Book</h3>
+        <img src="../../assets/books.png" alt="Book Icon" class="modal-icon" />
+      </div>
       <label>
         Title:
         <input [(ngModel)]="newBook.title" />
