@@ -79,6 +79,7 @@ export class BookListComponent implements OnInit {
   viewBook(id: number): void {
     alert(`View Book with ID: ${id}`);
   }
+  
 
   editBook(book: Book): void {
     this.editingBook = { ...book }; // Create a copy for editing

@@ -111,3 +111,15 @@ button:hover {
   color: #646363;
   font-size: medium;
 }
+
+.model-inputs .error-message{
+  color: red;
+  font-size: small;
+}
+
+button img.plus-icon {
+  width: 20px; /* Adjust the size of the icon */
+  height: 20px;
+  margin-right: 8px; /* Adds space between the icon and text */
+  vertical-align: middle;
+}
