@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>Book List</h2>
+    
     <button (click)="openAddBookModal()">Add Book</button>
     <table class="book-table">
       <thead>
@@ -20,8 +20,8 @@
           <td>{{ book.isbn }}</td>
           <td>{{ book.publicationDate | date: 'mediumDate' }}</td>
           <td>
-            <button (click)="viewBook(book.id)">View</button>
-            <button (click)="editBook(book)">Edit</button>
+            <!-- <button (click)="viewBook(book.id)">View</button> -->
+            <button (click)="editBook(book)"style="margin-right:10px;">Edit</button>
             <button (click)="deleteBook(book.id)">Delete</button>
           </td>
         </tr>
@@ -31,7 +31,13 @@
     <!-- Edit Popup Modal -->
     <div *ngIf="editingBook" class="modal">
       <div class="modal-content">
-        <h3>Edit Book</h3>
+        <div class="modal-content">
+          <div class="modal-header" style="display: flex; align-items: center; justify-content: space-between;">
+            <h3 style="margin: 0;">Edit Book Details</h3>
+            <img src="../../assets/books2.png" alt="Book Icon" class="modal-icon" style="height: 60px; margin-right: 20px;" />
+          </div>
+        </div>
+        <div class="model-inputs">
         <label>
           Title:
           <input [(ngModel)]="editingBook.title" />
@@ -48,6 +54,7 @@
           Publication Date:
           <input [(ngModel)]="editingBook.publicationDate" type="date" />
         </label>
+        </div>
         <div class="form-actions">
           <button (click)="saveBook()">Save</button>
           <button (click)="cancelEdit()">Cancel</button>
@@ -60,7 +67,11 @@
     <!-- Add Book Modal -->
   <div *ngIf="showAddBookModal" class="modal">
     <div class="modal-content">
-      <h3>Add New Book</h3>
+      <div class="modal-header">
+        <h3>Add New Book</h3>
+        <img src="../../assets/books.png" alt="Book Icon" class="modal-icon" />
+      </div>
+      <div class = "model-inputs">
       <label>
         Title:
         <input [(ngModel)]="newBook.title" />
@@ -77,6 +88,7 @@
         Publication Date:
         <input [(ngModel)]="newBook.publicationDate" type="date" />
       </label>
+    </div>
       <div class="form-actions">
         <button (click)="addBook()">Add</button>
         <button (click)="closeAddBookModal()">Cancel</button>
