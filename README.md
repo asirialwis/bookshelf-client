@@ -1,27 +1,36 @@
-# BookshelfClient
+# 📚 Book Tracker Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+Welcome to the **Book Tracker Frontend**! This is a responsive web application for tracking books with features like adding, editing, and deleting books. The application is built with Angular and designed to provide an intuitive user experience.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🌟 Features
 
-## Code scaffolding
+- **Book Management:**
+  - Add new books with details like title, author, ISBN, and publication date.
+  - Edit existing book details.
+  - Delete books with confirmation.
+- **Navbar:**
+  - Includes a dynamic date display.
+  - Book Tracker title centered for a clean look.
+  - Profile icon and application logo.
+- **Responsive Design:** Optimized for different screen sizes.
+- 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🛠️ Technologies Used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Frontend Framework:** Angular
+- **Styling:** CSS
+- **Icons:** Custom image icons for profile and app logo
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🚀 How to Run the Project
 
-## Running end-to-end tests
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/asirialwis/bookshelf-client.git
+   cd bookshelf-client
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
