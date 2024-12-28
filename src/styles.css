@@ -3,4 +3,10 @@
 
 *{
     font-family: 'Montserrat', sans-serif;
+
 }
+
+body,input , button{
+    font-weight: 500;
+}
+

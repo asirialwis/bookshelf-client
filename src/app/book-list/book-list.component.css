@@ -105,3 +105,9 @@ button:hover {
   gap: 10px;
   margin-top: 20px;
 }
+
+
+.model-inputs input{
+  color: #646363;
+  font-size: medium;
+}
