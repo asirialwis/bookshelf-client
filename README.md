@@ -15,7 +15,7 @@ Welcome to the **Book Tracker Frontend**! This is a responsive web application f
   - Book Tracker title centered for a clean look.
   - Profile icon and application logo.
 - **Responsive Design:** Optimized for different screen sizes.
-- 
+  
 
 ---
 
@@ -33,4 +33,6 @@ Welcome to the **Book Tracker Frontend**! This is a responsive web application f
    ```bash
    git clone https://github.com/asirialwis/bookshelf-client.git
    cd bookshelf-client
+
+   
 
