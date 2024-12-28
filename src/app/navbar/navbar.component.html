@@ -1,9 +1,12 @@
 <div class="navbar">
     <div class="navbar-logo">
-      <img src="assets/bookshelf.jpg" alt="Logo" />
+      <img src="assets/book_house.png" alt="Logo" />
     </div>
     <div class="navbar-title">
-        <h3>Book Tracker</h3>
+      <h3>Book Tracker</h3>
+    </div>
+    <div class="navbar-date">
+      {{ today | date: 'fullDate' }}
     </div>
     <div class="navbar-profile">
       <img src="assets/profile.png" alt="Profile" />
