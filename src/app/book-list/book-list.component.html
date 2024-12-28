@@ -1,5 +1,6 @@
 <div class="container">
     <h2>Book List</h2>
+    <button (click)="openAddBookModal()">Add Book</button>
     <table class="book-table">
       <thead>
         <tr>
@@ -54,5 +55,34 @@
       </div>
       <div class="modal-overlay" (click)="cancelEdit()"></div>
     </div>
+
+
+    <!-- Add Book Modal -->
+  <div *ngIf="showAddBookModal" class="modal">
+    <div class="modal-content">
+      <h3>Add New Book</h3>
+      <label>
+        Title:
+        <input [(ngModel)]="newBook.title" />
+      </label>
+      <label>
+        Author:
+        <input [(ngModel)]="newBook.author" />
+      </label>
+      <label>
+        ISBN:
+        <input [(ngModel)]="newBook.isbn" />
+      </label>
+      <label>
+        Publication Date:
+        <input [(ngModel)]="newBook.publicationDate" type="date" />
+      </label>
+      <div class="form-actions">
+        <button (click)="addBook()">Add</button>
+        <button (click)="closeAddBookModal()">Cancel</button>
+      </div>
+    </div>
+    <div class="modal-overlay" (click)="closeAddBookModal()"></div>
+  </div>
   </div>
   

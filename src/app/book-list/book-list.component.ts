@@ -15,6 +15,14 @@ import { FormsModule } from '@angular/forms';
 export class BookListComponent implements OnInit {
   books: Book[] = [];
   editingBook: Book | null = null;
+  showAddBookModal = false; // Controls visibility of the Add Book modal
+
+  newBook = {
+    title: '',
+    author: '',
+    isbn: '',
+    publicationDate: ''
+  };
 
   constructor(private http: HttpClient) {}
 
@@ -35,6 +43,37 @@ export class BookListComponent implements OnInit {
         console.log('Book fetching completed');
       }
     });
+  }
+
+  addBook(): void {
+    this.http.post<Book>('http://localhost:5232/api/book', this.newBook).subscribe({
+      next: (createdBook) => {
+        this.books.push(createdBook); // Add new book to the list
+        console.log('Book added successfully:', createdBook);
+        this.closeAddBookModal(); // Close the modal after success
+      },
+      error: (error) => {
+        console.error('Error adding book:', error);
+      }
+    });
+  }
+
+  openAddBookModal(): void {
+    this.showAddBookModal = true;
+  }
+
+  closeAddBookModal(): void {
+    this.showAddBookModal = false;
+    this.resetNewBook();
+  }
+
+  resetNewBook(): void {
+    this.newBook = {
+      title: '',
+      author: '',
+      isbn: '',
+      publicationDate: ''
+    };
   }
 
   viewBook(id: number): void {
