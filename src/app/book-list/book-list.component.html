@@ -12,20 +12,47 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let book of books">
-          <td>{{ book.id }}</td>
+        <tr *ngFor="let book of books; let i = index">
+          <td>{{ i + 1 }}</td>
           <td>{{ book.title }}</td>
           <td>{{ book.author }}</td>
           <td>{{ book.isbn }}</td>
-          <td>{{ book.publicationDate }}</td>
+          <td>{{ book.publicationDate | date: 'mediumDate' }}</td>
           <td>
             <button (click)="viewBook(book.id)">View</button>
-            <button (click)="editBook(book.id)">Edit</button>
+            <button (click)="editBook(book)">Edit</button>
             <button (click)="deleteBook(book.id)">Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
-  </div>
   
+    <!-- Edit Popup Modal -->
+    <div *ngIf="editingBook" class="modal">
+      <div class="modal-content">
+        <h3>Edit Book</h3>
+        <label>
+          Title:
+          <input [(ngModel)]="editingBook.title" />
+        </label>
+        <label>
+          Author:
+          <input [(ngModel)]="editingBook.author" />
+        </label>
+        <label>
+          ISBN:
+          <input [(ngModel)]="editingBook.isbn" />
+        </label>
+        <label>
+          Publication Date:
+          <input [(ngModel)]="editingBook.publicationDate" type="date" />
+        </label>
+        <div class="form-actions">
+          <button (click)="saveBook()">Save</button>
+          <button (click)="cancelEdit()">Cancel</button>
+        </div>
+      </div>
+      <div class="modal-overlay" (click)="cancelEdit()"></div>
+    </div>
+  </div>
   

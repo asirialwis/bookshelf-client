@@ -3,16 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { Book } from '../models/book.model';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css'],
-  imports:[CommonModule, HttpClientModule]
+  imports: [CommonModule, HttpClientModule,FormsModule]
 })
 export class BookListComponent implements OnInit {
   books: Book[] = [];
+  editingBook: Book | null = null;
 
   constructor(private http: HttpClient) {}
 
@@ -34,14 +36,38 @@ export class BookListComponent implements OnInit {
       }
     });
   }
-  
 
   viewBook(id: number): void {
     alert(`View Book with ID: ${id}`);
   }
 
-  editBook(id: number): void {
-    alert(`Edit Book with ID: ${id}`);
+  editBook(book: Book): void {
+    this.editingBook = { ...book }; // Create a copy for editing
+  }
+
+  saveBook(): void {
+    if (this.editingBook) {
+      this.http.put<Book>(`http://localhost:5232/api/book/${this.editingBook.id}`, this.editingBook).subscribe({
+        next: (updatedBook) => {
+          const index = this.books.findIndex(book => book.id === updatedBook.id);
+          if (index !== -1) {
+            this.books[index] = updatedBook;
+          }
+          console.log(`Book with ID ${updatedBook.id} updated successfully.`);
+          this.editingBook = null; // Clear editing state
+        },
+        error: (error) => {
+          console.error('Error updating book:', error);
+        },
+        complete: () => {
+          console.log('Book update operation completed.');
+        }
+      });
+    }
+  }
+
+  cancelEdit(): void {
+    this.editingBook = null; // Clear editing state
   }
 
   deleteBook(id: number): void {
@@ -61,5 +87,4 @@ export class BookListComponent implements OnInit {
       });
     }
   }
-  
 }
