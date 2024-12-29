@@ -11,6 +11,18 @@ button {
   color: white;
   border-radius: 4px;
 }
+.edit-btn {
+  background-color: #ffc107;
+}
+.delete-btn {
+  background-color: #dc3545;
+}
+.delete-btn:hover {
+  background-color: #c82333;
+}
+.edit-btn:hover {
+  background-color: #d39e00;
+}
 
 button:hover {
   background-color: #0056b3;
